@@ -25,11 +25,13 @@
 // Cypress.Commands.overwrite('visit', (originalFn, url, options) => { ... })
 
 import LoginPage from '../pages/LoginPage';
-const loginInformation = LoginPage();
+
+const loginPage = new LoginPage();
 
 
 Cypress.Commands.add("login", (user, password) => {
-    loginInformation.getUsernameField().type(user)
-    loginInformation.getPasswordField().type(password)
-    loginInformation.getButton().click()
+    loginPage.visit()
+    loginPage.getUsernameField().type(user)
+    loginPage.getPasswordField().type(password)
+    loginPage.getButton().click()
 })

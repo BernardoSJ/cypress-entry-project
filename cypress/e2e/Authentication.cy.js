@@ -1,29 +1,39 @@
+import LoginPage from '../pages/LoginPage';
+import DashboardPage from '../pages/DashboardPage';
+
+
 describe("Module 1 - Authentication", () => {
- 
+  const login = new LoginPage();
+  const dashboard = new DashboardPage();
+
   beforeEach(() => {
     cy.visit("/")
   })
 
   it("Validate Login using correct credentials", () => {
-    cy.login("Admin", "admin123")
-    cy.url().should('contain', "/dashboard/index")
-    cy.get('.oxd-userdropdown').should("be.visible")
+    cy.fixture("loginData.json").then(({ valid }) => {
+      cy.login(valid.username, valid.password)
+      cy.url().should('contain', "/dashboard/index")
+      dashboard.getUserDropdown().should("be.visible")
+    });
   })
 
   it("Validate Login using incorrect credentials", () => {
-    cy.login("Admin1", "admin123")
-    cy.url().should('not.contain', "/dashboard/index")
-    cy.xpath("//p[@class='oxd-text oxd-text--p oxd-alert-content-text']").contains("Invalid credentials")
+    cy.fixture("loginData.json").then(({ invalid }) => {
+      cy.login(invalid.username, invalid.password)
+      cy.url().should('not.contain', "/dashboard/index")
+      login.getErrorMessage().should("be.visible").and('contain', 'Invalid credentials')
+    });
+
   })
 
   it("Validate Required Files in Login Form", () => {
-    cy.get('.oxd-button').click()
-    cy.xpath("//span[@class='oxd-text oxd-text--span oxd-input-field-error-message oxd-input-group__message']").eq(0).should("be.visible")
-    cy.xpath("//span[@class='oxd-text oxd-text--span oxd-input-field-error-message oxd-input-group__message']").eq(1).should("be.visible")
+    login.getButton().click()
+    login.getErrorMessage().should("be.visible").and('contain', 'Required')
   })
 
   it("Validate Forgot Password Link Works", () => {
-    cy.xpath("//p[@class='oxd-text oxd-text--p orangehrm-login-forgot-header']").click()
+    login.getForgotPasswordLink().click()
     cy.url().should('contain', "/auth/requestPasswordResetCode")
     cy.xpath("//button[@class='oxd-button oxd-button--large oxd-button--secondary orangehrm-forgot-password-button orangehrm-forgot-password-button--reset']").should("be.visible")
   })

@@ -13,11 +13,17 @@ class LoginPage {
     }
 
     getButton(){
-        return cy.get('.oxd-button');
+        return cy.get(".oxd-button");
     }
 
     getErrorMessage(){
-        return cy.get('.error-message');
+        return cy.xpath("//*[contains(@class, 'error-message') or contains(@class,'alert-content-text')]")
+    }
+
+    getForgotPasswordLink(){
+        return cy.xpath("//p[@class='oxd-text oxd-text--p orangehrm-login-forgot-header']")
     }
 
 }
+
+export default LoginPage;
