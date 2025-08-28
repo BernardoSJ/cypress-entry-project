@@ -1,7 +1,7 @@
 describe("Module 1 - Authentication", () => {
  
   beforeEach(() => {
-    cy.visit("/auth/login")
+    cy.visit("/")
   })
 
   it("Validate Login using correct credentials", () => {
