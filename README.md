@@ -12,3 +12,19 @@ To run the tests locally:
 3. Install dependencies (only the first time):
    ```bash
    npm install
+4. Install dependencies (only the first time):
+   ```bash
+   npx cypress open
+
+## Test Coverage
+Currently, the project includes automated tests for the Login module.
+More modules (employee management, logout, etc.) will be added progressively.
+
+## Project Structure
+
+cypress/
+  ├── fixtures/      # Test data (e.g., credentials, JSON data)
+  ├── pages/         # Page Object Models for reusability
+  ├── e2e/           # End-to-end test specifications
+  └── support/       # Custom commands and global configurations
+cypress.config.js    # Cypress configuration file
