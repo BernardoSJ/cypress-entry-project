@@ -22,6 +22,7 @@ More modules (employee management, logout, etc.) will be added progressively.
 
 ## Project Structure
 
+```text
 cypress/
   ├── fixtures/      # Test data (e.g., credentials, JSON data)
   ├── pages/         # Page Object Models for reusability
