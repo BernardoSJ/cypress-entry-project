@@ -27,7 +27,7 @@ describe("Module 1 - Authentication", () => {
 
   })
 
-  it("Validate Required Files in Login Form", () => {
+  it("Validate Required Fields in Login Form", () => {
     login.getButton().click()
     login.getErrorMessage().should("be.visible").and('contain', 'Required')
   })
