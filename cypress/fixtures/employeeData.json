@@ -1,0 +1,14 @@
+{
+  "valid": {
+    "firstname": "Bernardo",
+    "lastname": "Salinas"
+  },
+  "invalid": {
+    "firstname": "",
+    "lastname": "Test"
+  },
+  "modified": {
+    "firstname": "Jose",
+    "lastname": "Test"
+  }
+}

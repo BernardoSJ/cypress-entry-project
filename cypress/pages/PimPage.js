@@ -4,7 +4,7 @@ class PimPage {
         return cy.xpath("//button[text()=' Add ']");
     }
 
-    getUserNameField(){
+    getFirstNameField(){
         return cy.xpath("//input[@name='firstName']");
     }
 
@@ -42,6 +42,14 @@ class PimPage {
 
     getErrorMessage(){
         return cy.xpath("//span[contains(@class,'field-error')]");
+    }
+
+    getCellFirstName(){
+        return cy.xpath("//div[@class='oxd-table-cell oxd-padding-cell'][3]");
+    }
+
+    getCellLastName(){
+        return cy.xpath("//div[@class='oxd-table-cell oxd-padding-cell'][4]");
     }
 
 }

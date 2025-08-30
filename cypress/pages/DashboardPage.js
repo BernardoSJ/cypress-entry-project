@@ -8,6 +8,11 @@ class DashboardPage {
         return cy.xpath("//a[contains(@href, 'viewPim')]")
     }
 
+    getLogoutOption(){
+        return cy.xpath("//a[text()='Logout']")
+    }
+
+
 }
 
 export default DashboardPage;
