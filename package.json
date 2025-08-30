@@ -3,10 +3,10 @@
   "version": "1.0.0",
   "main": "index.js",
   "scripts": {
-    "clean:reports": "npx rimraf cypress/reports || true",
-    "cy:run": "npx cypress run",
-    "cy:report:merge": "npx mochawesome-merge \"cypress/reports/*-report.json\" > cypress/reports/report.json",
-    "cy:report:generate": "npx marge cypress/reports/report.json --reportDir cypress/reports --reportFilename combined-report.html",
+    "clean:reports": "npx --no-install rimraf cypress/reports || true",
+    "cy:run": "npx --no-install cypress run",
+    "cy:report:merge": "npx --no-install mochawesome-merge \"cypress/reports/*-report.json\" > cypress/reports/report.json",
+    "cy:report:generate": "npx --no-install marge cypress/reports/report.json --reportDir cypress/reports --reportFilename combined-report.html",
     "cy:full": "npm run clean:reports && npm run cy:run && npm run cy:report:merge && npm run cy:report:generate"
   },
   "keywords": [],
