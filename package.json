@@ -4,9 +4,9 @@
   "main": "index.js",
   "scripts": {
     "clean:reports": "npx --no-install rimraf cypress/reports || true",
-    "cy:run": "npx --no-install cypress run",
+    "cy:run": "npx --no-install cypress run --reporter mochawesome --reporter-options reportDir=cypress/reports,overwrite=false,html=false,json=true",
     "cy:report:merge": "npx --no-install mochawesome-merge \"cypress/reports/*-report.json\" > cypress/reports/report.json",
-    "cy:report:generate": "npx --no-install marge cypress/reports/report.json --reportDir cypress/reports --reportFilename combined-report.html",
+    "cy:report:generate": "npx --no-install marge cypress/reports/report.json --reportDir cypress/reports --reportFilename combined-report.html --inline --overwrite",
     "cy:full": "npm run clean:reports && npm run cy:run && npm run cy:report:merge && npm run cy:report:generate"
   },
   "keywords": [],
