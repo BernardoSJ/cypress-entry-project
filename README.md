@@ -12,9 +12,22 @@ To run the tests locally:
 3. Install dependencies (only the first time):
    ```bash
    npm install
-4. Install dependencies (only the first time):
+4. Run tests in interactive mode:
    ```bash
    npx cypress open
+5. Run tests in headless mode (with report generation):
+   ```bash
+   npm run cy:full
+
+## Test Reports
+
+The project uses Mochawesome for generating test reports.
+
+After running:
+   
+Reports will be available under:
+   ```bash
+   npm run cy:full
 
 ## Test Coverage
 Currently, the project includes automated tests for the Login module.
