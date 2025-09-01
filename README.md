@@ -3,7 +3,7 @@
 This repository is my first practice project using **Cypress** as an automation tool.  
 It focuses on automating tests for the demo application: [OrangeHRM Demo](https://opensource-demo.orangehrmlive.com).
 
-## Running the Project
+## 🚀 Running the Project
 
 To run the tests locally:
 
@@ -12,14 +12,17 @@ To run the tests locally:
 3. Install dependencies (only the first time):
    ```bash
    npm install
+   ```
 4. Run tests in interactive mode:
    ```bash
    npx cypress open
+   ```
 5. Run tests in headless mode (with report generation):
    ```bash
    npm run cy:full
+   ```
 
-## Test Reports
+## 📊 Test Reports
 
 The project uses Mochawesome for generating test reports.
 
@@ -27,13 +30,34 @@ After running:
    
 Reports will be available under:
    ```bash
-   npm run cy:full
+   cypress/reports
+   ```
+Each report is generated with a **timestamped folder** to keep executions separate, and It will include individual reports for each module tested and also a combined report, showing all the results.
 
-## Test Coverage
-Currently, the project includes automated tests for the Login module.
-More modules (employee management, logout, etc.) will be added progressively.
+## ⚙️ GitHub Actions CI
 
-## Project Structure
+This project includes a GitHub Actions workflow to run Cypress tests in CI/CD.
+
+* Workflow name: Cypress Tests
+* Trigger: Manual (workflow_dispatch)
+* Outputs:
+   * Test results
+   * Combined **Mochawesome HTML report** (uploaded as an artifact)
+
+## ✅ Test Coverage
+
+Currently automated modules:
+* **Login**
+* **Employee Management (PIM)**
+     * Add Employee
+     * Verify Employee in List
+     * Edit Employee Data
+     * Validation for missing mandatory fields
+* **Logout**
+More modules can be added progressively (e.g., Admin Dashboard)
+
+
+## 📂 Project Structure
 
 ```text
 cypress/
