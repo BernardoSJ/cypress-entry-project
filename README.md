@@ -34,6 +34,11 @@ Reports will be available under:
    ```
 Each report is generated with a **timestamped folder** to keep executions separate, It will include an individual report combining all the modules tested.
 
+Example:
+
+<img width="1427" height="773" alt="image" src="https://github.com/user-attachments/assets/a5b65621-3841-4185-a1bc-f3b46e2d645b" />
+
+
 ## ⚙️ GitHub Actions CI
 
 This project includes a GitHub Actions workflow to run Cypress tests in CI/CD.
