@@ -54,6 +54,7 @@ Currently automated modules:
      * Edit Employee Data
      * Validation for missing mandatory fields
 * **Logout**
+
 More modules can be added progressively (e.g., Admin Dashboard)
 
 
