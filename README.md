@@ -32,7 +32,7 @@ Reports will be available under:
    ```bash
    cypress/reports
    ```
-Each report is generated with a **timestamped folder** to keep executions separate, and It will include individual reports for each module tested and also a combined report, showing all the results.
+Each report is generated with a **timestamped folder** to keep executions separate, It will include an individual report combining all the modules tested.
 
 ## ⚙️ GitHub Actions CI
 
@@ -67,3 +67,11 @@ cypress/
   ├── e2e/           # End-to-end test specifications
   └── support/       # Custom commands and global configurations
 cypress.config.js    # Cypress configuration file
+```
+
+## 📌 Future Improvements
+
+This project is always evolving. Upcoming updates include:
+* GitHub Pages reports: View the latest test reports directly in your browser.
+* Expanded test coverage: More system modules will be tested.
+* CI/CD integration: Easier tracking and monitoring of test runs.
