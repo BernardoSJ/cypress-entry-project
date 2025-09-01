@@ -55,7 +55,7 @@ Currently automated modules:
      * Validation for missing mandatory fields
 * **Logout**
 
-More modules can be added progressively (e.g., Admin Dashboard)
+More modules can be added progressively (e.g., Admin, Dashboard)
 
 
 ## 📂 Project Structure
